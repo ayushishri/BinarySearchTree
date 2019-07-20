@@ -27,6 +27,19 @@ int add_bst(bstNode **root, int val) {
 	return 0;
 }
 
+int bstSearch(bstNode *root, int key) {
+	if (root==NULL)
+		return -1;
+	if (root->val==key)
+		return 1;
+	if (key<(root->val)) 
+		bstSearch(&(root->l));
+	if (key>(root->val)) 
+		bstSearch(&(root->r));
+	return 0;
+	
+}
+
 int inorder (bstNode (*root)) {
 	if (root==NULL)
 		return -1;
